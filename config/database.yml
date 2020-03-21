@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+  database: <%= Rails.application.secrets.database[:database] %>
+  host: <%= Rails.application.secrets.database[:host] %>
+  port: <%= Rails.application.secrets.database[:port] %>
+  username: <%= Rails.application.secrets.database[:username] %>
+  password: <%= Rails.application.secrets.database[:password] %>
+  encoding: unicode
+
+development:
+  <<: *default
+test:
+  <<: *default
+production:
+  <<: *default
