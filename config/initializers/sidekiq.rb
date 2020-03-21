@@ -1,3 +1,3 @@
 Sidekiq.configure_server do |config|
-  config.redis = { url: Rails.application.secrets.cache_manager[:redis_uri] }
+  config.redis = { url: Rails.application.secrets.sidekiq[:redis_uri] }
 end

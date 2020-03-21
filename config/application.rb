@@ -28,7 +28,9 @@ module AsanaRebel
     # the framework and any gems in your application.
     config.generators.assets = false
 
-    config.active_job.queue_adapter = :sidekiq
-    config.cache_store = :redis_cache_store, { url: Rails.application.secrets.cache_manager[:sidekiq] }
+    logger           = ActiveSupport::Logger.new(STDOUT)
+    logger.formatter = config.log_formatter
+    config.log_tags  = [:subdomain, :uuid]
+    config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
 end
