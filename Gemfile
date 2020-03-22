@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.2'
 
+gem "active_model_serializers"
 gem "bing_translator", "~> 6.0.0"
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'execjs'
