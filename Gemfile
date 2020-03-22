@@ -23,3 +23,8 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+
+group :test do
+  gem 'factory_bot_rails'
+  gem 'shoulda-matchers'
+end
