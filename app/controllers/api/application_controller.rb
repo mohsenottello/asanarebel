@@ -4,7 +4,7 @@ module Api
     before_action :set_format
 
     def authenticate!
-      render_error(status_code: :unauthorized, message: 'invalid token') if Rails.application.secrets.search_locations[:token] != request.headers['AuthenticationToken']
+      render_error(status_code: :unauthorized, message: 'invalid token') unless Token.find_by(token_hash: request.headers['AuthenticationToken'])
     end
 
     def set_format

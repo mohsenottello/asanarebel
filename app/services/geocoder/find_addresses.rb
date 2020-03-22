@@ -36,7 +36,7 @@ module Geocoder
     end
 
     def save_in_db(addresses)
-      return unless Rails.application.secrets.search_locations[:use_db]
+      return unless Rails.application.secrets.search_locations[:save_db]
 
       Workers::SaveLocationsWorker.perform_async(addresses)
     end

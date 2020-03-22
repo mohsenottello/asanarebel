@@ -4,6 +4,7 @@ RSpec.describe Api::AddressesController, type: :request do
   let(:json_body) { "[{\"lat\":\"51.1576661\",\"lon\":\"-1.4458572\",\"display_name\":\"Test, Test Valley, Hampshire\"}]" }
   let(:success_response) { Net::HTTPSuccess.new(nil, '200', 'message') }
   let(:failed_response) { Net::HTTPResponse.new(nil, '400', 'error') }
+  let!(:token) { create(:token, token_hash: 'test') }
 
   describe "get search_address" do
     before { get "/api/search_address" }
