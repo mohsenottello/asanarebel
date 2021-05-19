@@ -73,7 +73,7 @@ GEM
       concurrent-ruby (~> 1.0)
     json (2.3.0)
     jsonapi-renderer (0.2.2)
-    libv8 (3.16.14.19-x86_64-linux)
+    libv8 (3.16.14.19)
     listen (3.2.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -85,7 +85,9 @@ GEM
     marcel (0.3.3)
       mimemagic (~> 0.3.2)
     method_source (1.0.0)
-    mimemagic (0.3.4)
+    mimemagic (0.3.10)
+      nokogiri (~> 1)
+      rake
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
     minitest (5.14.0)
@@ -94,7 +96,8 @@ GEM
     nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
     pg (1.2.3)
-    puma (3.12.4)
+    puma (4.3.8)
+      nio4r (~> 2.0)
     rack (2.0.9)
     rack-protection (2.0.8.1)
       rack
@@ -188,7 +191,7 @@ DEPENDENCIES
   execjs
   factory_bot_rails
   pg (>= 0.18, < 2.0)
-  puma (~> 3.11)
+  puma (~> 4.3)
   rails (~> 5.2.3)
   redis (~> 4.0)
   rspec-rails (~> 3.8)
